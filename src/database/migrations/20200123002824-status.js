@@ -1,10 +1,14 @@
 module.exports = {
-    up: (queryInterface, DataTypes) => queryInterface.createTable('Transactions', {
+    up: (queryInterface, DataTypes) => queryInterface.createTable('Status', {
         id: {
             allowNull: false,
             autoIncrement: true,
             primaryKey: true,
             type: DataTypes.INTEGER,
+        },
+        name: {
+            allowNull: false,
+            type: DataTypes.STRING(20),
         },
         createdAt: {
             allowNull: false,
@@ -16,5 +20,5 @@ module.exports = {
         },
     }),
 
-    down: (queryInterface) => queryInterface.dropTable('Transactions'),
+    down: (queryInterface) => queryInterface.dropTable('Status'),
 };
